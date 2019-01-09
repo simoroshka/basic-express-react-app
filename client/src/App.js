@@ -7,7 +7,7 @@ class App extends Component {
   state = { message: 'Loading...' };
   componentDidMount = async () => {
     const res = await axios.get('/api');
-    this.setState({ message: res.data });
+    this.setState({ message: `Message from the server: ${res.data}` });
   };
   render() {
     return (

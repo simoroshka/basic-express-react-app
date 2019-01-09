@@ -1,9 +1,8 @@
-const express = require('express');
-const path = require('path');
+import express from 'express';
+import path from 'path';
+
 const app = express();
 const port = process.env.PORT || 4000;
-
-app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/api', (req, res) => res.send('Hello World!!'));
 

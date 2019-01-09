@@ -4,8 +4,8 @@
   "description": "An example project with express.js backend and react frontend",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "server": "nodemon index.js",
+    "start": "node_modules/.bin/babel-node index.js",
+    "server": "nodemon --exec node_modules/.bin/babel-node index.js",
     "client": "cd client && npm run start",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -15,9 +15,12 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-preset-env": "^1.7.0",
     "express": "^4.16.4"
   },
   "devDependencies": {
-    "concurrently": "^4.1.0"
+    "babel-cli": "^6.26.0",
+    "concurrently": "^4.1.0",
+    "nodemon": "^1.18.9"
   }
 }
